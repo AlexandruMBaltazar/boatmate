@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .Values.persistentVolume.name }}
+  labels:
+    {{- include "postgresql.labels" . | nindent 4 }}
+    type: {{ .Values.persistentVolume.type }}
+spec:
+  storageClassName: {{ .Values.persistentVolume.storageClassName }}
+  capacity:
+    storage: {{ .Values.persistentVolume.storage }}
+  accessModes:
+    - {{ .Values.persistentVolume.accessModes }}
+  hostPath:
+    path: {{ .Values.persistentVolume.hostPath }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.volume.persistentVolumeClaimName }}
+  labels:
+    {{- include "postgresql.labels" . | nindent 4 }}
+spec:
+  storageClassName: {{ .Values.persistentVolume.storageClassName }}
+  accessModes:
+    - {{ .Values.persistentVolume.accessModes }}
+  resources:
+    requests:
+      storage: {{ .Values.persistentVolume.storage }}

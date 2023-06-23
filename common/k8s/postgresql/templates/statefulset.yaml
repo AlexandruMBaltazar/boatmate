@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "postgresql.fullname" . }}
+  labels:
+    {{- include "postgresql.labels" . | nindent 4 }}
+spec:
+  serviceName: {{ .Chart.Name }}
+  replicas: 1
+  template:
+    metadata:
+      name: {{ include "postgresql.fullname" . }}
+      labels:
+        {{- include "postgresql.labels" . | nindent 8 }}
+    spec:
+      volumes:
+        - name: {{ .Values.volume.name }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.volume.persistentVolumeClaimName }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: {{ .Values.image.repository }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            - mountPath: {{ .Values.volume.mountPath }}
+              name: {{ .Values.volume.name }}
+          envFrom:
+            - configMapRef:
+                name: {{ .Values.configMap.name }}
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+      restartPolicy: {{ .Values.restartPolicy }}
+  selector:
+    matchLabels:
+      {{- include "postgresql.labels" . | nindent 6 }}
