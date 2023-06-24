@@ -18,8 +18,9 @@
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.5.Final/mapstruct-processor-1.5.5.Final.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.5.Final/mapstruct-1.5.5.Final.jar" />
         </processorPath>
-        <module name="eureka-server" />
         <module name="identity-server" />
+        <module name="common-service" />
+        <module name="eureka-server" />
         <module name="identity-client" />
       </profile>
     </annotationProcessing>

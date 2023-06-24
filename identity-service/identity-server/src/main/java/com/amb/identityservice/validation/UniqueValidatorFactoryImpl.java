@@ -1,8 +1,8 @@
 package com.amb.identityservice.validation;
 
+import com.amb.commonservice.validation.UniqueValidatorFactory;
+import com.amb.commonservice.validation.UniqueValidatorStrategy;
 import com.amb.identityservice.account.model.Account;
-import com.amb.identityservice.account.validation.UniqueValidatorFactory;
-import com.amb.identityservice.account.validation.UniqueValidatorStrategy;
 import com.amb.identityservice.repository.AccountRepository;
 import org.springframework.stereotype.Component;
 

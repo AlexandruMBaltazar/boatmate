@@ -1,7 +1,7 @@
 package com.amb.identityservice.account.dto;
 
+import com.amb.commonservice.validation.annotation.Unique;
 import com.amb.identityservice.account.model.Account;
-import com.amb.identityservice.account.validation.annotation.Unique;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;

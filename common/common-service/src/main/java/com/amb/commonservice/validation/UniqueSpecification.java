@@ -1,4 +1,4 @@
-package com.amb.identityservice.account.validation;
+package com.amb.commonservice.validation;
 
 import org.springframework.data.jpa.domain.Specification;
 

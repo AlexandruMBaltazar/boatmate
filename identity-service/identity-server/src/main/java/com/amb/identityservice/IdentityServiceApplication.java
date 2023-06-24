@@ -6,7 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication(
     scanBasePackages = {
         "com.amb.identityservice",
-        "com.amb.identityservice.account"
+        "com.amb.identityservice.account",
+        "com.amb.commonservice"
     }
 )
 public class IdentityServiceApplication {

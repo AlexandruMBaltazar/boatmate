@@ -1,6 +1,6 @@
-package com.amb.identityservice.account.validation.annotation;
+package com.amb.commonservice.validation.annotation;
 
-import com.amb.identityservice.account.validation.UniqueValidator;
+import com.amb.commonservice.validation.UniqueValidator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 

@@ -1,6 +1,6 @@
-package com.amb.identityservice.account.validation;
+package com.amb.commonservice.validation;
 
-import com.amb.identityservice.account.validation.annotation.Unique;
+import com.amb.commonservice.validation.annotation.Unique;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.context.annotation.Scope;
