@@ -3,10 +3,8 @@ package com.amb.identityservice.service.impl;
 import com.amb.identityservice.account.dto.AccountRequest;
 import com.amb.identityservice.account.dto.AccountResponse;
 import com.amb.identityservice.mapper.AccountMapper;
-import com.amb.identityservice.model.Account;
 import com.amb.identityservice.repository.AccountRepository;
 import com.amb.identityservice.service.AccountService;
-import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,8 +20,8 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public AccountResponse createAccount(@Valid AccountRequest accountRequest) {
-        Account account = accountMapper.accountRequestToAccount(accountRequest);
+    public AccountResponse createAccount(AccountRequest accountRequest) {
+        var account = accountMapper.accountRequestToAccount(accountRequest);
         return accountMapper.accountToAccountResponse(accountRepository.save(account));
     }
 }
