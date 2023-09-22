@@ -1,8 +1,11 @@
 package com.amb.identityservice.service;
 
-import com.amb.identityservice.account.dto.AccountRequest;
-import com.amb.identityservice.account.dto.AccountResponse;
+import com.amb.identityservice.account.dto.request.AccountRequest;
+import com.amb.identityservice.account.dto.request.AuthenticationRequest;
+import com.amb.identityservice.account.dto.response.AuthenticationResponse;
 
 public interface AccountService {
-    AccountResponse createAccount(AccountRequest accountRequest);
+    AuthenticationResponse createAccount(AccountRequest accountRequest);
+
+    AuthenticationResponse authenticate(AuthenticationRequest authenticationRequest);
 }

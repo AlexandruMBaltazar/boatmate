@@ -25,6 +25,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api-gateway" target="17" />
+      <module name="ApiGateway" target="17" />
+      <module name="authentication-service" target="17" />
       <module name="common" target="17" />
     </bytecodeTargetLevel>
   </component>

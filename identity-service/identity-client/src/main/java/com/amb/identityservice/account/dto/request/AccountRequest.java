@@ -1,4 +1,4 @@
-package com.amb.identityservice.account.dto;
+package com.amb.identityservice.account.dto.request;
 
 import com.amb.commonservice.validation.annotation.Unique;
 import com.amb.commonservice.validation.annotation.ValueOfEnum;
