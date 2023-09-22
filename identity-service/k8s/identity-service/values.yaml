@@ -29,10 +29,9 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: NodePort
+  type: ClusterIP
   port: 8082
   targetPort: 8082
-  nodePort: 32761
 
 configMap:
   name: "identity-service-config"
